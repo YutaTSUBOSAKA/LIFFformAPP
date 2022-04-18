@@ -22,11 +22,9 @@
         </script>
         
         <div>
-            <input class="form-control w-100 mt-1" name="bangou" required>
-            <input type="date" class="form-control w-50 mt-1" name="deliveryDate" min="2022-04-18" max=value="2999-12-31">
+            <input type="date" class="form-control w-40 mt-1" name="deliveryDate" value="2022-04-19" min="2022-04-18" max=value="2999-12-31">
         </div>
 
-        
         
         
         <p class="mt-3">数量<br>
@@ -89,11 +87,11 @@
         $(function () {
             $('form').submit(function () {
                 const name    = $('input[name="name"]').val();
-                const bangou = $('input[name="bangou"]').val();
+                const deliveryDate = $('input[name="deliveryDate"]').val();
                 const shushoujou  = $('input[name="shushoujou"]').val();
                 const keika  = $('input[name="keika"]').val();
                 const hatunetu = $('input[name="hatunetu"]').val();
-                const msg = `${name}\n${bangou}\n${shushoujou}\n${keika}\n${hatunetu}`;
+                const msg = `${name}\n${deliveryDate}\n${shushoujou}\n${keika}\n${hatunetu}`;
                 sendText(msg);
                 return false;
             });
