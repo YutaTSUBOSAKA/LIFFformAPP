@@ -12,12 +12,16 @@
     <form class="w-75 mx-auto">
         <p class="mt-3">燃料油種の選択</p>
         <div>
-            <input class="form-control w-100 mt-1" name="name" placeholder="" required>
+            <select class="form-control w-100 mt-1" name = "oilSelect" required>
+                <option value = "3100">軽油</option>
+                <option value = "2100">灯油</option>
+                <option value = "4500">重油</option>
+            </select>
         </div>
 
         <p class="mt-3">納入希望日</p>
         <div>
-            <input type="date" class="form-control w-100 mt-1" id="currentDate" name="deliveryDate" min="2022-04-18" max=value="2999-12-31" required>
+            <input type="date" class="form-control w-100 mt-1" name="deliveryDate" min="2022-04-18" max=value="2999-12-31" required>
 
             
         <script>
