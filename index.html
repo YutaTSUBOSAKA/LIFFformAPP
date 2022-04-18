@@ -21,7 +21,7 @@
 
         <p class="mt-3">納入希望日</p>
         <div>
-            <input type="date" class="form-control w-100 mt-1" name="deliveryDate" min="2022-04-18" max=value="2999-12-31" required>
+            <input type="date" class="form-control w-100 mt-1" id="deliveryDate" min="2022-04-18" max=value="2999-12-31" required>
 
             
         <script>
@@ -30,14 +30,14 @@
             var month = date.getMonth();
             var day = date.getDate() + 7;
             
-            document.getElementById("currentDate").value = year + "-" + month + "-" + day
+            deliveryDate.value = "2022-05-01"
         </script>
 
 
         
         
-        <p class="mt-3">数量<br>
-                        ※満タン以外の場合のみ指定下さい</p>
+        <p class="mt-3">納入数量<br>
+                        ※数量指定の場合のみご記入下さい</p>
         <div>
             <input class="form-control w-100 mt-1" name="shushoujou" value="満タン" required>
         </div>
@@ -49,9 +49,9 @@
             <input class="form-control w-100 mt-1" name="keika" value="なし" required>
         </div>
 
-        <p class="mt-3">その他　連絡事項／備考</p>
+        <p class="mt-3">連絡事項／備考</p>
         <div>
-            <input class="form-control w-100 mt-1" name="hatunetu" required>
+            <input class="form-control w-100 mt-1" name="hatunetu">
         </div>
         
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
