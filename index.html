@@ -2,7 +2,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>燃料油のご注文フォーム<br>- ツボサカエナジー株式会社 -</title>
+    <title>燃料油のご注文フォーム</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rossorigin="anonymous">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/themes/base/jquery-ui.min.css">
@@ -10,7 +10,7 @@
 <body>
 
     <form class="w-75 mx-auto">
-        <p class="mt-3"><h1>燃料油種の選択</h1></p>
+        <p class="mt-3">燃料油種の選択</p>
         <div>
             <select class="form-control w-100 mt-1" name = "oilSelect" required>
                 <option value = "3100">軽油</option>
@@ -19,7 +19,7 @@
             </select>
         </div>
 
-        <p class="mt-3"><h1>納入希望日</h1></p>
+        <p class="mt-3">納入希望日</p>
         <div>
             <input type="date" class="form-control w-100 mt-1" id="delivery_date" name="deliveryDate" max=value="2030-12-31" required>
         </div>
@@ -35,22 +35,22 @@
             }
         </script>
         
-        <p class="mt-3"><h1>納入数量</h1><br>
+        <p class="mt-3">納入数量<br>
                         ※数量指定の場合のみご記入下さい</p>
         <div>
-            <input class="form-control w-100 mt-1" name="shushoujou" value="満タン" required>
+            <input class="form-control w-100 mt-1" name="deliveryQuantity" value="満タン" required>
         </div>
 
         <p class="mt-3">納入条件（場所、時間）の指定<br>
                         条件指定がある場合はご記入ください。<br>
                         ※配送状況により調整をお願いする場合がございます</p>
         <div>
-            <input class="form-control w-100 mt-1" name="keika" value="なし" required>
+            <input class="form-control w-100 mt-1" name="deliveryConditions" value="なし" required>
         </div>
 
-        <p class="mt-3"><h1>連絡事項／備考</h1></p>
+        <p class="mt-3">連絡事項／備考</p>
         <div>
-            <input class="form-control w-100 mt-1" name="hatunetu">
+            <input class="form-control w-100 mt-1" name="deliveryNote">
         </div>
         
         <input type="submit" class="mt-4 btn btn-primary" value="送信">
@@ -94,12 +94,12 @@
 
         $(function () {
             $('form').submit(function () {
-                const name    = $('input[name="name"]').val();
-                const deliveryDate = $('input[name="deliveryDate"]').val();
-                const shushoujou  = $('input[name="shushoujou"]').val();
-                const keika  = $('input[name="keika"]').val();
-                const hatunetu = $('input[name="hatunetu"]').val();
-                const msg = `${name}\n${deliveryDate}\n${shushoujou}\n${keika}\n${hatunetu}`;
+                const oilSelect          = $('input[name="oilSelect"]').val();
+                const deliveryDate       = $('input[name="deliveryDate"]').val();
+                const deliveryQuantity   = $('input[name="deliveryQuantity"]').val();
+                const deliveryConditions = $('input[name="deliveryConditions"]').val();
+                const deliveryNote       = $('input[name="deliveryNote"]').val();
+                const msg = `${oilSelect}\n${deliveryDate}\n${deliveryQuantity}\n${deliveryConditions}\n${deliveryNote}`;
                 sendText(msg);
                 return false;
             });
