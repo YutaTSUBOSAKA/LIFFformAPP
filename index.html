@@ -19,7 +19,7 @@
             </select>
         </div>
 
-        <p class="mt-3">納入希望日●</p>
+        <p class="mt-3">納入希望日</p>
         <div>
             <input type="date" class="form-control w-100 mt-1" id="delivery_date" name="deliveryDate" min="2022-04-18" max=value="2999-12-31" required>
 
@@ -27,6 +27,7 @@
         <script type="text/javascript">
             window.onload = function(){
             var today = new Date();
+                today.setDate(today.getDate());
             var delivery_yyyy = today.getFullYear();
             var delivery_mm   = ("0" + (today.getMonth() + 1).slice(-2);
             var delivery_dd   = ("0" + (today.getDate()).slice(-2);
