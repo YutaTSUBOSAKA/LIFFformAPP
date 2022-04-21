@@ -95,7 +95,11 @@
         $(function () {
             $('form').submit(function () {
                 const oilSelect          = $('select[name="oilSelect"]').val();
-                const deliveryDate       = $('input[name="deliveryDate"]').val();
+                const deliveryDate       = $('input[name="deliveryDate"]').getFullYear() + '/' + $('input[name="deliveryDate"]').getMonth()　+ '/' + $('input[name="deliveryDate"]').getDate();
+                
+                
+                
+                
                 const deliveryQuantity   = $('input[name="deliveryQuantity"]').val();
                 const deliveryConditions = $('input[name="deliveryConditions"]').val();
                 const deliveryNote       = $('input[name="deliveryNote"]').val();
